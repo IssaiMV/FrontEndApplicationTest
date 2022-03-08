@@ -1,0 +1,10 @@
+:host {
+    width: 100%;
+    form{
+        display: flex;
+        justify-content: space-between;
+        .form-check-input:checked + .form-checked-content {
+            opacity: .5;
+        }
+    }
+}

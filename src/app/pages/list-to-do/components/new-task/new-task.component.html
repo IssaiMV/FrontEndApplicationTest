@@ -1,0 +1,8 @@
+<form class="list-group-item d-flex gap-3 bg-light" [formGroup]="taskForm" (submit)="newTask()">
+    <input class="form-check-input form-check-input-placeholder bg-light flex-shrink-0" disabled="" type="checkbox"
+        value="" style="font-size: 1.375em;">
+    <span class="pt-1 form-checked-content">
+        <input type="text" class="w-100 transparent" placeholder="Add new task..." [formControlName]="'text'">
+    </span>
+    <button type="submit" class="btn btn-primary btn-sm" [disabled]="!taskForm.valid">Add</button>
+</form>

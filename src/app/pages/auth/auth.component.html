@@ -1,0 +1,20 @@
+<main class="form-signin">
+    <form [formGroup]="loginForm" (submit)="login()">
+        <img class="mb-4" height="57"
+            src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/000000/external-login-freelancer-xnimrodx-lineal-color-xnimrodx.png" />
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <fieldset class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                [formControlName]="'email'">
+            <label for="floatingInput">Email address</label>
+        </fieldset>
+        <fieldset class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                [formControlName]="'password'">
+            <label for="floatingPassword">Password</label>
+        </fieldset>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">Administator: admin@mail.com / admin</p>
+        <p class="mt-5 mb-3 text-muted">Restricted user: user@mail.com / user</p>
+    </form>
+</main>

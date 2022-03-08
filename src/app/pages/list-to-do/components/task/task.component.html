@@ -1,0 +1,8 @@
+<form>
+    <input class="form-check-input flex-shrink-0" (change)="update(task.id)" type="checkbox" #checkbox
+        style="font-size: 1.375rem;" [checked]="task.status">
+    <span class="pt-1 form-checked-content">
+        <strong>{{task.text}}</strong>
+    </span>
+    <button type="button" class="btn btn-primary btn-sm" (click)="remove(task.id)" *ngIf="canRemove()">Remove</button>
+</form>

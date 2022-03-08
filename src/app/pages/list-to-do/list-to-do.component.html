@@ -1,0 +1,13 @@
+<section class="container">
+    <h1>{{title}}</h1>
+    <div class="list-group">
+        <app-new-task (addTask)="addTask($event)">
+        </app-new-task>
+        <label class="list-group-item d-flex gap-3" *ngFor="let task of listOfTask">
+            <app-task [task]="task" (removeTask)="removeTask($event)" (updateTask)="updateTask($event)"></app-task>
+        </label>
+        <div class="alert alert-success" role="alert" *ngIf="listOfTask.length === 0">
+            Empty list - You have no pending tasks!
+        </div>
+    </div>
+</section>
