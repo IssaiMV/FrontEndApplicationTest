@@ -12,10 +12,10 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then(module => module.AuthModule)
   },
-  // {
-  //   path: 'auth',
-  //   loadChildren: () => import('./welcome/welcome.module').then(module => module.WelcomeModule)
-  // },
+  {
+    path: 'application-test',
+    loadChildren: () => import('./pages/application-test/application-test.module').then(module => module.ApplicationTestModule)
+  },
   {
     path: '**',
     redirectTo: ''
