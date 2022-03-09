@@ -24,10 +24,16 @@
                 <p class="card-text">parametro 1: fecha inicio</p>
                 <p class="card-text">parametro 2: fecha fin</p>
                 <p class="card-text">El programa debe regresar la cantidad de dias en el que el dia “Domingo” es el
-                    último
-                    día
-                    del mes en ese lapso.</p>
+                    último día del mes en ese lapso.</p>
                 <p class="card-text">La salida debe ser el número de días</p>
+                <form (submit)="actividadDos($event)">
+                    <label for="start-act1">Start date:</label>
+                    <input type="date" id="start-act1" name="trip-start">
+                    <label for="end">End date:</label>
+                    <input type="date" id="end" name="trip-start">
+                    <button type="submit" class="btn btn-primary btn-sm">Ok</button>
+                </form>
+                <small class="card-text">El rango tiene: {{countSunday}} domingos</small>
             </div>
         </div>
         <div class="card w-50" style="width: 18rem;">
@@ -37,9 +43,16 @@
                 <p class="card-text">parametro 1: año inicio</p>
                 <p class="card-text">parametro 2: ano fin</p>
                 <p class="card-text">El programa debe regresar un arreglo con los años que fueron bisiestos La salida
-                    debe
-                    ser
-                    una cadena con los años separados por el caracter "@"</p>
+                    debe ser una cadena con los años separados por el caracter "@"</p>
+                <form (submit)="actividadTres($event)">
+                    <label for="start-act1">Start year:</label>
+                    <input type="number" min="1500" max="2099" step="1" value="2016" />
+                    <label for="end">End year:</label>
+                    <input type="number" min="1500" max="2099" step="1" value="2020" />
+                    <button type="submit" class="btn btn-primary btn-sm">Ok</button>
+                </form>
+                <p class="card-text">Años biciestos: </p>
+                <small>{{leapYears}}</small>
             </div>
         </div>
         <div class="card w-50" style="width: 18rem;">
@@ -71,23 +84,25 @@
                 <p class="card-text">s (String) = Un texto de n caracteres (Lorem ipmsum...)</p>
                 <p class="card-text">Obtener el número de veces que se repite cada letra de la cadena</p>
                 <p class="card-text">La salida será una lista indicando el carácter con el número de veces encontrada en
-                    la
-                    cadena (a =
-                    15, b = 6, c...)</p>
+                    la cadena (a = 15, b = 6, c...)</p>
+                <textarea name="cad" id="caja" cols="60" rows="2" (input)="actividadCinco($event)"></textarea>
+                <br>
+                <small>{{timesLetter | json}}</small>
             </div>
         </div>
         <div class="card w-50" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title"> Application test 6 (Opcional, Bonus)</h5>
                 <p class="card-text">Si se inicia en la esquina superior izquierda de un grid de 2x2, y las únicos
-                    posibles
-                    movimientos
-                    son “derecha” y “abajo”. Existen exactamente 6 rutas para llegar a la esquina inferior derecha,
-                    ejemplo:</p>
+                    posibles movimientos son “derecha” y “abajo”. Existen exactamente 6 rutas para llegar a la esquina
+                    inferior derecha, ejemplo:</p>
                 <p class="card-text">Dado los parámetros de entrada:</p>
                 <p class="card-text">n(int) = tamaño del grid (nxn)</p>
                 <p class="card-text">El programa deberá regresar el número de rutas posibles para el grid de tamaño n.
                 </p>
+                <input type="number" min="1" (input)="actividadSeis($event)" value="1">
+                <p class="card-text">Numero de caminos: </p>
+                <small>{{numberWays}}</small>
             </div>
         </div>
     </div>

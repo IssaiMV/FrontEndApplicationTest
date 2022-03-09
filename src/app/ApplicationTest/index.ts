@@ -25,6 +25,12 @@ export async function getWeather(lat: string, lon: string) {
  * El programa debe regresar la cantidad de dias en el que el dia “Domingo” es el último día del mes en ese lapso.
  * La salida debe ser el número de días
  */
+/**
+ * 
+ * @param dateStart 
+ * @param dateEnd 
+ * @returns number
+ */
 export function countDaysAreSunday(dateStart: Date, dateEnd: Date) {
     let day = dateStart;
     let countSunday = 0;
@@ -87,7 +93,7 @@ export function getLeapYearsByRange(yearStart: number, yearEnd: number): string 
  */
 export function countTimesLetterRepeats(cad: string): Object {
     let arrCount: any = {}
-    let arr = cad.toLowerCase().replace(/\s/g, '').split('');
+    let arr = cad.toLowerCase().replace(/\s/g, '').split('').sort();
     arr.forEach((letter: string) => arrCount[letter] = arr.filter(lett => lett === letter).length)
     return arrCount;
 }
@@ -105,7 +111,8 @@ export function countTimesLetterRepeats(cad: string): Object {
  * @param num 
  * @returns number
  */
-export function countWays(num: number): number {
+export function countWays(num: any): number {
+    num = parseInt(num);
     return factorial(num + num) / (factorial(num) * factorial(num));
 }
 /**
@@ -114,12 +121,10 @@ export function countWays(num: number): number {
  * @returns number
  */
 export function factorial(num: number): number {
-    num = Math.trunc(num);
     if (num < 0)
-        return -1;
+        return 0;
     else if (num == 0)
         return 1;
-    else {
+    else
         return (num * factorial(num - 1));
-    }
 }
